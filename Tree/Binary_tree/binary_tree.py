@@ -3,7 +3,6 @@ class Node:
         self.data = data
         self.left = None
         self.right = None
-        print(data)
     
     def __repr__(self):
         return repr(self.data)
@@ -16,7 +15,6 @@ class Node:
 
 
 def create_tree():
-    print("calling")
     two = Node(2)
     seven = Node(7)
     nine = Node(9)
@@ -36,14 +34,24 @@ def create_tree():
     four = Node(4)
     eight.add_left(three)
     eight.add_right(four)
-    print(two)
     # now return the root node
     return two
 
 
+def pre_order(node):
+    print(node)
+
+    if node.left:
+        pre_order(node.left)
+    if node.right:
+        pre_order(node.right)
+
 root = create_tree()
-print(root)
+    # print(root)
+pre_order(root)
+
 
 if __name__ == "__main":
     root = create_tree()
-    print(root)
+    # print(root)
+    pre_order(root)
