@@ -46,9 +46,20 @@ def pre_order(node):
     if node.right:
         pre_order(node.right)
 
+# root = create_tree()
+# pre_order(root)
+
+
+def post_order(node):
+
+    if node.left:
+        post_order(node.left)
+    if node.right:
+        post_order(node.right)
+    print(node)
+
 root = create_tree()
-    # print(root)
-pre_order(root)
+post_order(root)
 
 
 if __name__ == "__main":
